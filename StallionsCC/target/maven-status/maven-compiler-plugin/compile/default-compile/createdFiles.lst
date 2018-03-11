@@ -1,0 +1,13 @@
+com\stallionscc\controller\RegistrationController.class
+com\stallionscc\controller\PlayerController.class
+com\stallionscc\config\AppConfig.class
+com\stallionscc\service\PlayerServiceImpl.class
+com\stallionscc\service\PlayerService.class
+com\stallionscc\entity\Player.class
+com\stallionscc\config\MySpringMvcDispatcherServletInitializer.class
+com\stallionscc\config\SecurityWebApplicationInitializer.class
+com\stallionscc\config\SecurityConfig.class
+com\stallionscc\dao\PlayerDAO.class
+com\stallionscc\controller\LoginController.class
+com\stallionscc\user\CrmUser.class
+com\stallionscc\dao\PlayerDAOImpl.class

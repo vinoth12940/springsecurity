@@ -1,0 +1,6 @@
+com\springsec\config\WebInitializer.class
+com\springsec\config\AppConfig.class
+com\springsec\config\SecurityConfig.class
+com\springsec\controller\HomeController.class
+com\springsec\config\WebSecInitializer.class
+com\springsec\controller\LoginController.class

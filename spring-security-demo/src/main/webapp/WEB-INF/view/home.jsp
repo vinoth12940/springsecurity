@@ -17,6 +17,22 @@
 		Role:<security:authentication property="principal.authorities"/>
 	
 	</h1>
+	
+	<hr>
+		<security:authorize access="hasRole('MANAGER')">
+			<p>
+				<a href="${ pageContext.request.contextPath }/leaders">leadership meeting</a>
+			</p>
+		</security:authorize>	
+	</hr>
+	
+	<hr>
+		<security:authorize access="hasRole('ADMIN')">	
+			<p>
+				<a href="${ pageContext.request.contextPath }/systems">IT systems</a>
+			</p>
+		</security:authorize>	
+	</hr>
 		</br>
 		</br>
 		<form:form action="${ pageContext.request.contextPath }/logout" method="POST">

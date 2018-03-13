@@ -23,10 +23,6 @@
 	<c:if test="${ param.logout != null }">
 		<p style="color: green;font-style: italic;"> logged out successfully</p>
 	</c:if>
-	<p>
-		user:<security:authentication property="principal.username"/>
-		Role:<security:authentication property="principal.authorities"/>
-	</p>
 	
 		UserName: <input style="border: thick; border-color: black;" type="text" name="username"/>
 		</br>

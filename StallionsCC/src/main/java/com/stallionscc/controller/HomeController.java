@@ -12,4 +12,19 @@ public class HomeController {
 	public String showWelcome() {
 		return "welcome";
 	}
+	
+	@GetMapping("/gallery")
+	public String showgallery() {
+		return "gallery";
+	}
+	
+	@GetMapping("/aboutUs")
+	public String showAboutUs() {
+		return "aboutUs";
+	}
+	
+	@GetMapping("/contactUs")
+	public String showContactUs() {
+		return "contactUs";
+	}
 }

@@ -178,12 +178,16 @@ public class AppConfig implements WebMvcConfigurer {
 		return txManager;
 	}	
 	
+	/*
+     * Resource handler
+     */
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry
           .addResourceHandler("/resources/**")
           .addResourceLocations("/resources/"); 
-    }	
+    }
+        
 }
 
 

@@ -21,6 +21,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private DataSource securityDataSource;
 	
+	@Autowired
+	private SimpleAuthenticationSuccessHandler successHandler;
+	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
@@ -34,16 +37,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 
 		http.authorizeRequests()
+			.antMatchers("/welcome/**").hasAnyRole("ADMIN", "USER")
 			.antMatchers("/player/showForm*").hasAnyRole("ADMIN")
 			.antMatchers("/player/save*").hasAnyRole("ADMIN")
 			.antMatchers("/player/delete").hasRole("ADMIN")
 			.antMatchers("/player/**").hasAnyRole("ADMIN", "USER")
 			.antMatchers("/resources/**").permitAll()
 			.and()
-			.formLogin()
+			.formLogin().successHandler(successHandler)
 				.loginPage("/showMyLoginPage")
 				.loginProcessingUrl("/authenticateTheUser")
-				.defaultSuccessUrl("/player/list", true)
 				.permitAll()
 			.and()
 			.logout().permitAll()

@@ -1,4 +1,4 @@
-<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <div class="main-sidebar side-nav">
         <section class="sidebar">
             <ul class="sidebar-menu">
@@ -9,9 +9,9 @@
                     </a>
                 </li>
                 <li class="active"><a href="${pageContext.request.contextPath}/welcome/" ><i class="fa fa-home"></i> <span>Home</span></a></li>
+				<li><a href="${pageContext.request.contextPath}/scoreCard"><i class="fa fa-calendar"></i> <span>Score Card</span></a></li>
 				<security:authorize access="hasAnyRole('ADMIN')">
 					<li><a href="${pageContext.request.contextPath}/register/showRegistrationForm" ><i class="fa fa-pencil fa-fw"></i> <span>Register New User</span></a></li>
-					<li><a href="${pageContext.request.contextPath}/scoreCard"><i class="fa fa-calendar"></i> <span>Score Card</span></a></li>
 					<li>
 						<a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-search"></i> <span>Player</span><i class="fa fa-fw fa-angle-down pull-right"></i></a>
 						<ul id="submenu-1" class="submenu collapse">

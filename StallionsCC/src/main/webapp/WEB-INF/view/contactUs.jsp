@@ -177,7 +177,7 @@
 					<div class="row">
 						<div class="col-md-8">
 							<div class="well well-sm">
-								<form:form action="${ pageContext.request.contextPath }/mailSuccess" method="POST" modelAttribute="mail" class="form-horizontal">
+								<form:form action="${ pageContext.request.contextPath }/welcome/mailSuccess" method="POST" modelAttribute="mail" class="form-horizontal">
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">

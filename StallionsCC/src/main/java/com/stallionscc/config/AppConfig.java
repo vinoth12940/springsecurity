@@ -13,9 +13,12 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.ui.freemarker.FreeMarkerConfigurationFactoryBean;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -187,6 +190,40 @@ public class AppConfig implements WebMvcConfigurer {
           .addResourceHandler("/resources/**")
           .addResourceLocations("/resources/"); 
     }
+    
+    /*
+	 * Mail config
+	 */
+	@Bean
+    public JavaMailSender getMailSender() {
+        JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+ 
+        mailSender.setHost("smtp.gmail.com");
+        mailSender.setPort(587);
+        mailSender.setUsername("mailtostallionscc@gmail.com");
+        mailSender.setPassword("stallions18");
+ 
+        Properties javaMailProperties = new Properties();
+        javaMailProperties.put("mail.smtp.starttls.enable", "true");
+        javaMailProperties.put("mail.smtp.auth", "true");
+        javaMailProperties.put("mail.transport.protocol", "smtp");
+        javaMailProperties.put("mail.debug", "true");
+ 
+        mailSender.setJavaMailProperties(javaMailProperties);
+        return mailSender;
+    }
+ 
+	
+	/*
+     * Template maker
+     */
+	
+	@Bean
+	public FreeMarkerConfigurationFactoryBean getFreeMarkerConfiguration() {
+		FreeMarkerConfigurationFactoryBean bean = new FreeMarkerConfigurationFactoryBean();
+		bean.setTemplateLoaderPath("classpath:/fmtemplates/");
+		return bean;
+	}
         
 }
 

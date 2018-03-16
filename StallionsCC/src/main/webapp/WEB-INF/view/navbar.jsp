@@ -1,4 +1,4 @@
-<<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <div class="main-sidebar side-nav">
         <section class="sidebar">
             <ul class="sidebar-menu">

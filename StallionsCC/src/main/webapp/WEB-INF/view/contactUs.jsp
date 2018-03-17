@@ -39,39 +39,40 @@
             <!-- logo for regular state and mobile devices -->
             <span class="logo-lg"><b>Stallions </b>Cricket Club</span>
         </a>
-
-        <nav class="navbar">
-            <div class="user-login">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome <security:authentication property="principal.username" /><b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                    <!-- User image -->
-                    <li class="user-header">
-                        <img src="${pageContext.request.contextPath}/resources/img/no_user.png" style="width:100px;height:100px;" alt="User" class="img-circle" />
-                        <p>
-                            <security:authentication property="principal.username" /> - All rounder
-                            <small>Member since Feb. 2016</small>
-                        </p>
-                    </li>
-                    <li class="user-body">
-
-                    </li>
-                    <!-- Menu Footer-->
-                    <li class="user-footer">
-                        <div class="pull-left">
-							<!-- yet to map the profile details of the user-->
-                            <a href="player.html" class="btn btn-default btn-flat">Profile</a>
-                        </div>
-                        <div class="pull-right">
-							<form:form action="${pageContext.request.contextPath}/logout" 
-									   method="POST">
-										<input type="submit" value="Logout" class="btn btn-default btn-flat" />
-							</form:form>
-                            <!--  <a href="logout" class="btn btn-default btn-flat">Sign out</a> -->
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+		<security:authorize access="hasAnyRole('ADMIN', 'USER')">
+	        <nav class="navbar">
+	            <div class="user-login">
+	                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome <security:authentication property="principal.username" /><b class="caret"></b></a>
+	                <ul class="dropdown-menu">
+	                    <!-- User image -->
+	                    <li class="user-header">
+	                        <img src="${pageContext.request.contextPath}/resources/img/no_user.png" style="width:100px;height:100px;" alt="User" class="img-circle" />
+	                        <p>
+	                            <security:authentication property="principal.username" /> - All rounder
+	                            <small>Member since Feb. 2016</small>
+	                        </p>
+	                    </li>
+	                    <li class="user-body">
+	
+	                    </li>
+	                    <!-- Menu Footer-->
+	                    <li class="user-footer">
+	                        <div class="pull-left">
+								<!-- yet to map the profile details of the user-->
+	                            <a href="player.html" class="btn btn-default btn-flat">Profile</a>
+	                        </div>
+	                        <div class="pull-right">
+								<form:form action="${pageContext.request.contextPath}/logout" 
+										   method="POST">
+											<input type="submit" value="Logout" class="btn btn-default btn-flat" />
+								</form:form>
+	                            <!--  <a href="logout" class="btn btn-default btn-flat">Sign out</a> -->
+	                        </div>
+	                    </li>
+	                </ul>
+	            </div>
+	        </nav>
+        </security:authorize>
     </header>
     
     <!-- nav bar -->
@@ -93,7 +94,7 @@
                         <h4>For general enquiries!</h4>
 
                         <p>
-                            Please contact: +91 9840733122 Or via e-mail stallionscc.chennai@gmail.com
+                            Please contact: +91 9840733122 Or via e-mail mailtostallionscc@gmail.com
                         </p>
                     </div>
                 </div>
@@ -112,7 +113,7 @@
                                 <span style="float:left" class="info-box-number">
                                     <i class="fa fa-phone"></i> +91 9840733122
                                 </span>
-                                <span style="margin-left:250px; float: left" class="info-box-number"><i class="fa fa-envelope"></i> stallionscc.chennai@gmail.com</span>
+                                <span style="margin-left:250px; float: left" class="info-box-number"><i class="fa fa-envelope"></i> mailtostallionscc@gmail.com</span>
                             </div>
                         </div>
                         <!-- /.info-box-content -->
@@ -134,7 +135,7 @@
                                 <span style="float:left" class="info-box-number">
                                     <i class="fa fa-phone"></i> +91 9840733122
                                 </span>
-                                <span style="margin-left:250px; float: left" class="info-box-number"><i class="fa fa-envelope"></i> stallionscc.chennai@gmail.com</span>
+                                <span style="margin-left:250px; float: left" class="info-box-number"><i class="fa fa-envelope"></i> mailtostallionscc@gmail.com</span>
                             </div>
                         </div>
                         <!-- /.info-box-content -->
@@ -156,7 +157,7 @@
                                 <span style="float:left" class="info-box-number">
                                     <i class="fa fa-phone"></i> +91 9840733122
                                 </span>
-                                <span style="margin-left:250px; float: left" class="info-box-number"><i class="fa fa-envelope"></i> stallionscc.chennai@gmail.com</span>
+                                <span style="margin-left:250px; float: left" class="info-box-number"><i class="fa fa-envelope"></i> mailtostallionscc@gmail.com</span>
                             </div>
                         </div>
                         <!-- /.info-box-content -->
@@ -235,7 +236,7 @@
 
 								<address>
 								  <strong>Email</strong><br>
-								  <a href="mailto:#">stallionscc.chennai@gmail.com</a>
+								  <a href="mailto:#">mailtostallionscc@gmail.com</a>
 								</address>                    
 							</form>
 						</div>

@@ -39,7 +39,7 @@
             <!-- logo for regular state and mobile devices -->
             <span class="logo-lg"><b>Stallions </b>Cricket Club</span>
         </a>
-
+		<security:authorize access="hasAnyRole('ADMIN', 'USER')">
         <nav class="navbar">
             <div class="user-login">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome <security:authentication property="principal.username" /><b class="caret"></b></a>
@@ -72,6 +72,7 @@
                 </ul>
             </div>
         </nav>
+        </security:authorize>
     </header>
     
     <!-- nav bar -->

@@ -9,7 +9,9 @@
                     </a>
                 </li>
                 <li class="active"><a href="${pageContext.request.contextPath}/welcome/" ><i class="fa fa-home"></i> <span>Home</span></a></li>
-				<li><a href="${pageContext.request.contextPath}/scoreCard/"><i class="fa fa-calendar"></i> <span>Score Card</span></a></li>
+                <security:authorize access="hasAnyRole('USER')">
+					<li><a href="${pageContext.request.contextPath}/scoreCard/"><i class="fa fa-calendar"></i> <span>Score Card</span></a></li>
+				</security:authorize>
 				<security:authorize access="hasAnyRole('ADMIN')">
 					<li><a href="${pageContext.request.contextPath}/register/showRegistrationForm" ><i class="fa fa-pencil fa-fw"></i> <span>Register New User</span></a></li>
 					<li>

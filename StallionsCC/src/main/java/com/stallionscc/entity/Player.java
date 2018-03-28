@@ -1,11 +1,17 @@
 package com.stallionscc.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name="player")
@@ -25,8 +31,51 @@ public class Player {
 	@Column(name="email")
 	private String email;
 	
+	@Column(name="birth_Date")
+	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date birthDate;
+	
+	@Column(name="born_place")
+	private String bornPlace;
+	
+	@Column(name="address")
+	private String address;
+	
+	@Column(name="nick_Name")
+	private String nickName;
+	
+	@Column(name="batting_style")
+	private String battingStyle;
+	
+	@Column(name="bowling_style")
+	private String bowlingStyle;
+	
+	@Column(name="role")
+	private String role;
+	
+	@Column(name="status")
+	private String status;
+
 	public Player() {
 		super();
+	}
+
+	public Player(int id, String firstName, String lastName, String email, Date birthDate, String bornPlace,
+			String address, String nickName, String battingStyle, String bowlingStyle, String role, String status) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.birthDate = birthDate;
+		this.bornPlace = bornPlace;
+		this.address = address;
+		this.nickName = nickName;
+		this.battingStyle = battingStyle;
+		this.bowlingStyle = bowlingStyle;
+		this.role = role;
+		this.status = status;
 	}
 
 	public int getId() {
@@ -61,11 +110,78 @@ public class Player {
 		this.email = email;
 	}
 
+	public Date getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(Date birthDate) {
+		this.birthDate = birthDate;
+	}
+
+	public String getBornPlace() {
+		return bornPlace;
+	}
+
+	public void setBornPlace(String bornPlace) {
+		this.bornPlace = bornPlace;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getNickName() {
+		return nickName;
+	}
+
+	public void setNickName(String nickName) {
+		this.nickName = nickName;
+	}
+
+	public String getBattingStyle() {
+		return battingStyle;
+	}
+
+	public void setBattingStyle(String battingStyle) {
+		this.battingStyle = battingStyle;
+	}
+
+	public String getBowlingStyle() {
+		return bowlingStyle;
+	}
+
+	public void setBowlingStyle(String bowlingStyle) {
+		this.bowlingStyle = bowlingStyle;
+	}
+
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
 	@Override
 	public String toString() {
-		return "Customer [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + "]";
+		return "Player [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", birthDate=" + birthDate + ", bornPlace=" + bornPlace + ", address=" + address + ", nickName="
+				+ nickName + ", battingStyle=" + battingStyle + ", bowlingStyle=" + bowlingStyle + ", role=" + role
+				+ ", status=" + status + "]";
 	}
-		
+	
 }
 
 

@@ -8,10 +8,12 @@ import javax.sql.DataSource;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.core.env.Environment;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
@@ -182,7 +184,7 @@ public class AppConfig implements WebMvcConfigurer {
 	}	
 	
 	/*
-     * Resource handler
+     * Resource handler config
      */
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -212,10 +214,9 @@ public class AppConfig implements WebMvcConfigurer {
         mailSender.setJavaMailProperties(javaMailProperties);
         return mailSender;
     }
- 
 	
 	/*
-     * Template maker
+     * Template maker - email
      */
 	
 	@Bean
@@ -224,7 +225,16 @@ public class AppConfig implements WebMvcConfigurer {
 		bean.setTemplateLoaderPath("classpath:/fmtemplates/");
 		return bean;
 	}
-        
+	
+	/*
+     * validation error message property file config
+     */
+	@Bean
+	   public MessageSource messageSource() {
+	      ResourceBundleMessageSource source = new ResourceBundleMessageSource();
+	      source.setBasename("messages");
+	      return source;
+	}    
 }
 
 

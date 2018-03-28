@@ -15,6 +15,16 @@ CREATE TABLE `users` (
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+DROP TABLE IF EXISTS `playerdetail`;
+CREATE TABLE `playerdetail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `full_name` varchar(45) DEFAULT NULL,
+  `last_name` varchar(45) DEFAULT NULL,
+  `email` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 --
 -- Dumping data for table `users`
 --

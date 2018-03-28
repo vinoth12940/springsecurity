@@ -59,7 +59,7 @@
                     </a>
                 </li>
                 <li class="active"><a href="${pageContext.request.contextPath}/"><i class="fa fa-home"></i> <span>Home</span></a></li>
-                <li><a href="${pageContext.request.contextPath}/showMyLoginPa0ge"><i class="fa fa-sign-in"></i> <span>Sing in</span></a></li>
+                <li><a href="${pageContext.request.contextPath}/showMyLoginPage"><i class="fa fa-sign-in"></i> <span>Sing in</span></a></li>
                 <li><a href="${pageContext.request.contextPath}/welcome/gallery"><i class="fa fa-image"></i> <span>Gallery</span></a></li>
                 <li><a href="${pageContext.request.contextPath}/welcome/aboutUs"><i class="fa fa-book"></i> <span>About Us</span></a></li>
                 <li><a href="${pageContext.request.contextPath}/welcome/contactUs"><i class="fa fa-mobile"></i> <span>Contact Us</span></a></li>

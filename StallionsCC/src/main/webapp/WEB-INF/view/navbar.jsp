@@ -17,7 +17,10 @@
 					<li>
 						<a href="#" data-toggle="collapse" data-target="#submenu-1"><i class="fa fa-fw fa-search"></i> <span>Player</span><i class="fa fa-fw fa-angle-down pull-right"></i></a>
 						<ul id="submenu-1" class="submenu collapse">
+<<<<<<< HEAD
 							<li><a href="${pageContext.request.contextPath}/addPlayer"><i class="fa fa-angle-double-right"></i> Add Player</a></li>
+=======
+>>>>>>> refs/remotes/origin/master
 							<li><a href="${pageContext.request.contextPath}/player/list"><i class="fa fa-angle-double-right"></i> List of Players</a></li>
 						</ul>
 					</li>
